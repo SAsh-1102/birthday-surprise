@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+color:white;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+padding:20px;
+}
+
+.container{
+max-width:700px;
+z-index:2;
+}
+
+button{
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:#ff4d88;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+box-shadow:0 0 20px rgba(255,77,136,.6);
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#second,
+#final,
+#note{
+display:none;
+}
+
+#final{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:25px;
+box-shadow:0 0 25px rgba(255,255,255,.15);
+}
+
+h1{
+color:#ffd700;
+margin-bottom:15px;
+}
+
+h2{
+margin-bottom:15px;
+}
+
+p{
+line-height:1.8;
+margin:10px 0;
+}
+
+.rose{
+position:absolute;
+font-size:28px;
+animation:fall linear infinite;
+opacity:.8;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px);
+}
+100%{
+transform:translateY(110vh);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="first">
+
+<h2>✨ Hey ,</h2>
+
+<p>Today is all about you.</p>
+
+<p>A little surprise is waiting for you.</p>
+
+<p>Ready to open it? 🎂🎁</p>
+
+<button onclick="step2()">🎁 Open Surprise</button>
+
+</div>
+
+<div id="second">
+
+<h2>❤️ One More Click ❤️</h2>
+
+<p>Your birthday surprise is ready.</p>
+
+<button onclick="step3()">✨ Continue ✨</button>
+
+</div>
+
+<div id="final">
+
+<h1>🌹🎂 Happy Birthday Talha 🎂🌹</h1>
+
+<h2>🌹 🌹 🌹 🌹 🌹</h2>
+
+<p>
+Today is your day and I just wanted to make you smile. 😊
+</p>
+
+<p>
+May this year bring you happiness, success, good health,
+and countless beautiful moments.
+</p>
+
+<p>
+Thank you for being the wonderful person that you are.
+</p>
+
+<p>
+No matter where life takes you,
+I hope you always have reasons to smile. ❤️
+</p>
+
+
+<h2>✨ Happy Birthday Once Again ✨</h2>
+
+<button onclick="showNote()">💌 Open My Note</button>
+
+<div id="note">
+
+<br>
+
+<p>❤️</p>
+
+<p>
+Some people make ordinary days feel special.
+</p>
+
+<p>
+And today, on your birthday,
+I just wanted to remind you how wonderful you truly are.
+</p>
+
+<p>
+May your smile never fade,
+your dreams always find their way,
+and your heart always stay happy.
+</p>
+
+<p>
+Thank you for being you. 🌹
+</p>
+And if today brings even a small smile to your face, then this little surprise has done its job. 🌹❤️
+<p>
+Thank you for being you. 🌹
+</p>
+
+<p>
+With best wishes,
+Ayesha ❤️
+</p>
+
+<p>❤️</p>
+
+</div>
+
+</div>
+
+</div>
+
+<audio id="music">
+<source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function step2(){
+document.getElementById("first").style.display="none";
+document.getElementById("second").style.display="block";
+}
+
+function step3(){
+document.getElementById("second").style.display="none";
+document.getElementById("final").style.display="block";
+
+document.getElementById("music").play();
+
+createRoses();
+}
+
+function showNote(){
+document.getElementById("note").style.display="block";
+}
+
+function createRoses(){
+
+for(let i=0;i<25;i++){
+
+let rose=document.createElement("div");
+
+rose.innerHTML="🌹";
+
+rose.classList.add("rose");
+
+rose.style.left=Math.random()*100+"vw";
+
+rose.style.animationDuration=(5+Math.random()*8)+"s";
+
+document.body.appendChild(rose);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
