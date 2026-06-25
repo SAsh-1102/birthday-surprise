@@ -51,7 +51,8 @@ transform:scale(1.08);
 
 #second,
 #final,
-#note{
+#note,
+#lastPage{
 display:none;
 }
 
@@ -175,9 +176,9 @@ and your heart always stay happy.
 </p>
 
 <p>
-Thank you for being you. 🌹
+And if today brings even a small smile to your face,
+then this little surprise has done its job. 🌹❤️
 </p>
-And if today brings even a small smile to your face, then this little surprise has done its job. 🌹❤️
 <p>
 Thank you for being you. 🌹
 </p>
@@ -189,10 +190,60 @@ Ayesha ❤️
 
 <p>❤️</p>
 
-</div>
+<button onclick="showLastPage()">🌙 One Last Thing</button>
+
+<div id="lastPage">
+
+<br>
+
+<h2>🌙 One Last Thing...</h2>
+
+<p>
+I know you worry about things more than you should.
+</p>
+
+<p>
+But not everything needs to be figured out today.
+</p>
+
+<p>
+Trust the process, trust yourself,
+and let life unfold the way it's meant to.
+</p>
+
+<p>
+The things that are truly meant for you
+will never miss you.
+</p>
+
+<p>
+So don't be too hard on yourself.
+</p>
+
+<p>
+Keep working hard, keep believing,
+and keep smiling.
+</p>
+
+<p>
+And if life has beautiful plans written for us,
+they will find their way at the right time. ❤️
+</p>
+
+<p>
+Until then, just enjoy the journey
+and make beautiful memories.
+</p>
+
+<p>
+✨ Everything will be okay. ✨
+</p>
+
+<p>
+🌹
+</p>
 
 </div>
-
 </div>
 
 <audio id="music">
@@ -219,6 +270,9 @@ function showNote(){
 document.getElementById("note").style.display="block";
 }
 
+function showLastPage(){
+document.getElementById("lastPage").style.display="block";
+}
 function createRoses(){
 
 for(let i=0;i<25;i++){
